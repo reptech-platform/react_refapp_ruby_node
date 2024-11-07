@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Typography, Grid, Stack, Box, IconButton, useTheme } from '@mui/material';
 import { Add as AddBoxIcon } from '@mui/icons-material';
-import { SearchInput, CustomDialog, DocViewer, Image } from "components";
-import { DataTable } from '../../childs';
-import { ValidatorForm } from 'react-material-ui-form-validator';
+import { Box, Grid, IconButton, Stack, Typography, useTheme } from '@mui/material';
+import { CustomDialog, DocViewer, Image, SearchInput } from "components";
 import RenderFormContols from "components/formControls/RenderFormContols";
+import React, { useEffect, useState } from "react";
+import { ValidatorForm } from 'react-material-ui-form-validator';
+import { Link } from "react-router-dom";
 import Helper from "shared/helper";
 import { GetDocument } from "shared/services";
+import { DataTable } from '../../childs';
 
 // <CustomTable location={x} title={UIComponentTitle} controls={props.controls[x]} rows={dataRows} options={props.options} />
 const Component = (props) => {
@@ -31,10 +31,11 @@ const Component = (props) => {
     const [configBackInfo, setConfigBackInfo] = useState(null);
 
     const form = React.useRef(null);
-    /*  */
+
+    const numberOfColumns = 6;
 
     const InitializeConfig = async () => {
-        let _columns = controls.filter(x => x.type !== 'keyid').map(z => {
+        let _columns = controls.filter(x => x.type !== 'keyid').slice(0, numberOfColumns).map(z => {
 
             if (z.type === 'doc') {
                 return {
