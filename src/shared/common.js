@@ -33,12 +33,16 @@ const ExtractNavPropery = (x) => {
     return value;
 }
 
-const ExtractXml = async (xml) => {
+const ExtractXml = async (xml, entitySets) => {
     return new Promise(async (resolve) => {
         const entityTypes = xml.getElementsByTagName("EntityType");
         let obj = [];
         for (let type of entityTypes) {
-            const entity = { Name: type.getAttribute("Name"), Type: "Entity", Properties: [], HasStream: type.getAttribute("HasStream") === 'false' ? false : true };
+            let EntitySet = entitySets.find(x => x.Name === type.getAttribute("Name"))?.EntitySet;
+            const entity = {
+                Name: type.getAttribute("Name"), EntitySet, Type: "Entity", Properties: [],
+                HasStream: type.getAttribute("HasStream") === 'false' ? false : true
+            };
             entity.PropertyRef = GetPropertyRef(type);
             let props = [];
             const childrens = Object.values(type.children);
@@ -96,6 +100,20 @@ const ExtractEnums = async (xml) => {
     });
 }
 
+const ExtractEntitySet = async (xml) => {
+    return new Promise(async (resolve) => {
+        const items = xml.getElementsByTagName("EntitySet");
+        let obj = [];
+        for (let item of items) {
+            let EntitySet = item.getAttribute("Name");
+            let Name = item.getAttribute("EntityType")?.split(".")[1];
+            obj.push({ Name, EntitySet });
+        }
+        return resolve(obj);
+    });
+}
+
+
 const GetMetaDataInfo = async () => {
     return new Promise(async (resolve) => {
         await GetMetaData()
@@ -108,7 +126,8 @@ const GetMetaDataInfo = async () => {
                     const parser = new DOMParser();
                     const xmlDoc = parser.parseFromString(xmlContent, "application/xml");
                     const enums = await ExtractEnums(xmlDoc);
-                    const entities = await ExtractXml(xmlDoc);
+                    const entitySets = await ExtractEntitySet(xmlDoc);
+                    const entities = await ExtractXml(xmlDoc, entitySets);
                     const collections = [...enums, ...entities];
                     return resolve(collections);
                 }
@@ -121,4 +140,4 @@ const GetMetaDataInfo = async () => {
     });
 }
 
-export { GetQueryParams, GetMetaDataInfo };
+export { GetMetaDataInfo, GetQueryParams };
