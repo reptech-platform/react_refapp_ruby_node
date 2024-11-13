@@ -131,7 +131,8 @@ const theme = createTheme({
     searchIconBorder: "1px solid rgba(0, 0, 0, 0.23)",
     childAddIconBorder: "1px solid rgba(0, 0, 0, 0.23)",
     borderBottom: "1px solid rgba(0, 0, 0, 0.23)",
-    borderBottomFocus: "1px solid rgba(0, 0, 0, 0.87)"
+    borderBottomFocus: "1px solid rgba(0, 0, 0, 0.87)",
+    borderBottomFocus2: "1px solid rgba(0, 0, 0, 0.87)"
 });
 
 export default theme;

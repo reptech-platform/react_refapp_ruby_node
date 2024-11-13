@@ -26,7 +26,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
     justifyContent: 'center',
 }));
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
+const StyledInputBase = styled(InputBase)(({ isOneToMany, theme }) => ({
     color: 'inherit',
     marginRight: 10,
     '& .MuiInputBase-input': {
@@ -34,17 +34,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         paddingLeft: `calc(1em + ${theme.spacing(3)})`,
         transition: theme.transitions.create('width'),
         width: '100%',
-        borderBottom: theme.searchIconBorder,
+        borderBottom: isOneToMany ? theme.searchIconBorder : theme.borderBottom,
         [theme.breakpoints.up('sm')]: {
             width: '20ch',
             '&:focus': {
-                borderBottom: theme.borderBottomFocus
+                borderBottom: isOneToMany ? theme.borderBottomFocus : theme.borderBottomFocus2
             },
         },
     },
 }));
 
-const Component = ({ searchStr, onSearchChanged }) => {
+const Component = ({ isOneToMany, searchStr, onSearchChanged }) => {
 
     const [value, setValue] = React.useState("");
     const theme = useTheme();
@@ -80,6 +80,7 @@ const Component = ({ searchStr, onSearchChanged }) => {
                     onKeyPress={(e) => OnKeyPressed(e)}
                     placeholder="Search…"
                     value={value}
+                    isOneToMany={isOneToMany}
                     inputprops={{ 'aria-label': 'search' }} />
                 {!Helper.IsNullValue(value) && (
                     <IconButton
@@ -90,7 +91,7 @@ const Component = ({ searchStr, onSearchChanged }) => {
                         sx={{
                             marginLeft: "2px",
                             borderRadius: "4px",
-                            border: theme.searchIconBorder
+                            border: isOneToMany ? theme.searchIconBorder : theme.borderBottom
                         }}
                         onClick={(e) => OnClearInput(e)}
                     >

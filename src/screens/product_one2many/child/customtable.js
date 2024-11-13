@@ -191,7 +191,7 @@ const Component = (props) => {
                         </Typography>
                     </Grid>
                     <Grid container sx={{ justifyContent: 'flex-end' }}>
-                        <SearchInput searchStr={searchStr} onSearchChanged={OnSearchChanged} />
+                        <SearchInput isOneToMany={true} searchStr={searchStr} onSearchChanged={OnSearchChanged} />
                         {mode !== 'view' && (
                             <IconButton
                                 size="medium"
