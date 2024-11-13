@@ -8,11 +8,12 @@ const theme = createTheme({
         }
     },
     customtableheader: {
-        width: '100%',
+        width: '100%', backgroundColor: "#F9F9F9",
         borderTop: "1px solid rgba(81, 81, 81, 1)",
         borderLeft: "1px solid rgba(81, 81, 81, 1)",
         borderRight: "1px solid rgba(81, 81, 81, 1)",
-        borderRadius: "3px !important"
+        borderRadius: "3px !important",
+        color: "#000000"
     },
     typography: {
         fontFamily: [
@@ -133,8 +134,10 @@ const theme = createTheme({
             }
         }
     },
+    searchIconBorder: "1px solid rgba(0, 0, 0, 0.23)",
+    childAddIconBorder: "1px solid rgba(0, 0, 0, 0.23)",
     borderBottom: "1px solid rgba(255, 255, 255, 0.23)",
-    borderBottomFocus: "1px solid rgba(255, 255, 255, 0.87)"
+    borderBottomFocus: "1px solid rgba(0, 0, 0, 0.87)"
 });
 
 

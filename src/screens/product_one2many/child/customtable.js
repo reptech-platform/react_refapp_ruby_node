@@ -201,7 +201,7 @@ const Component = (props) => {
                                 sx={{
                                     marginLeft: "2px",
                                     borderRadius: "4px",
-                                    border: theme.borderBottom
+                                    border: theme.childAddIconBorder
                                 }}
                                 onClick={() => OnActionClicked(undefined, 'add')}
                             >

@@ -34,7 +34,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         paddingLeft: `calc(1em + ${theme.spacing(3)})`,
         transition: theme.transitions.create('width'),
         width: '100%',
-        borderBottom: theme.borderBottom,
+        borderBottom: theme.searchIconBorder,
         [theme.breakpoints.up('sm')]: {
             width: '20ch',
             '&:focus': {
@@ -90,7 +90,7 @@ const Component = ({ searchStr, onSearchChanged }) => {
                         sx={{
                             marginLeft: "2px",
                             borderRadius: "4px",
-                            border: theme.borderBottom
+                            border: theme.searchIconBorder
                         }}
                         onClick={(e) => OnClearInput(e)}
                     >
