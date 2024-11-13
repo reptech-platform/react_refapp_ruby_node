@@ -85,10 +85,10 @@ const Component = (props) => {
                                         <TableRow sx={{ borderTop: '0.75px solid #D2D4D7' }}>
                                             {footerItems.map((x, index) => (
                                                 <TableCell key={index} sx={{ width: footerItems.length > 1 ? "50%" : "100%", padding: "8px", borderRight: index === 0 && footerItems.length > 1 ? "0.75px solid #D2D4D7" : 0 }}>
-                                                    <Typography gutterBottom component="p" sx={{ fontWeight: "bold" }}>{x.name}</Typography>
+                                                    <Typography gutterBottom component="p" sx={{ fontWeight: "bold", color: "#000000" }}>{x.name}</Typography>
                                                     <Box sx={{ paddingTop: "2px", paddingLeft: "8px" }}>
-                                                        <Typography variant="body2" color="text.secondary" component="p">
-                                                            {row[x.value]}
+                                                        <Typography variant="body2" color="text.secondary" component="p" sx={{ color: "#000000" }}>
+                                                            {row[x.value]?.toString()}
                                                         </Typography>
                                                     </Box>
                                                 </TableCell>
