@@ -67,7 +67,7 @@ const Component = (props) => {
                         <ListItemButton onClick={() => NavigateTo("/products")} sx={{ height: 50 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                                 <Tooltip title="Products">
-                                    <ShoppingBasket />
+                                    <ShoppingBasket color="primary" />
                                 </Tooltip>
                             </ListItemIcon>
                             {open && <ListItemText primary="Products" sx={{ pl: 1 }} />}
@@ -75,7 +75,7 @@ const Component = (props) => {
                         <ListItemButton onClick={() => NavigateTo("/productsmany")} sx={{ height: 50 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                                 <Tooltip title="Products One to Many">
-                                    <ShareIcon />
+                                    <ShareIcon color="primary" />
                                 </Tooltip>
                             </ListItemIcon>
                             {open && <ListItemText primary="Products-One2Many" sx={{ pl: 1 }} />}
@@ -83,7 +83,7 @@ const Component = (props) => {
                         <ListItemButton onClick={() => NavigateTo("/producttypes")} sx={{ height: 50 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                                 <Tooltip title="Product Types">
-                                    <Toc />
+                                    <Toc color="primary" />
                                 </Tooltip>
                             </ListItemIcon>
                             {open && <ListItemText primary="Product Types" sx={{ pl: 1 }} />}
@@ -91,7 +91,7 @@ const Component = (props) => {
                         <ListItemButton onClick={() => NavigateTo("/infoform")} sx={{ height: 50 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                                 <Tooltip title="Information Form">
-                                    <EditNote />
+                                    <EditNote color="primary" />
                                 </Tooltip>
                             </ListItemIcon>
                             {open && <ListItemText primary="Information Form" sx={{ pl: 1 }} />}
@@ -99,7 +99,7 @@ const Component = (props) => {
                         <ListItemButton onClick={() => NavigateTo("/stepper")} sx={{ height: 50 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                                 <Tooltip title="Stepper Form">
-                                    <Checklist />
+                                    <Checklist color="primary" />
                                 </Tooltip>
                             </ListItemIcon>
                             {open && <ListItemText primary="Stepper Form" sx={{ pl: 1 }} />}
@@ -107,7 +107,7 @@ const Component = (props) => {
                         <ListItemButton onClick={() => NavigateTo("/tabbed")} sx={{ height: 50 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                                 <Tooltip title="Tabbed Layout">
-                                    <Tab />
+                                    <Tab color="primary" />
                                 </Tooltip>
                             </ListItemIcon>
                             {open && <ListItemText primary="Tabbed Layout" sx={{ pl: 1 }} />}
@@ -115,7 +115,7 @@ const Component = (props) => {
                         <ListItemButton onClick={() => NavigateTo("/producttiles")} sx={{ height: 50 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                                 <Tooltip title="Tiles Layout">
-                                    <GridViewIcon />
+                                    <GridViewIcon color="primary" />
                                 </Tooltip>
                             </ListItemIcon>
                             {open && <ListItemText primary="Tiles Layout" sx={{ pl: 1 }} />}
@@ -123,7 +123,7 @@ const Component = (props) => {
                         <ListItemButton onClick={() => NavigateTo("/productlist")} sx={{ height: 50 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                                 <Tooltip title="List Layout">
-                                    <Toc />
+                                    <Toc color="primary" />
                                 </Tooltip>
                             </ListItemIcon>
                             {open && <ListItemText primary="List Layout" sx={{ pl: 1 }} />}
