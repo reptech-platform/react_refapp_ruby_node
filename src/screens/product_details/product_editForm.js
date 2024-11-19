@@ -67,14 +67,14 @@ const Component = (props) => {
     }
 
     const OnSubmit = async () => {
-        let rslt, data, changes = [], productId, product, numfields;
+        let rslt, data, changes = [], productId, product, numfields, mapItem;
 
         product = row['product'];
         productId = row['product'].find((x) => x.type === 'keyid').value;
 
         for (let i = 0; i < MapItems.length; i++) {
             // Check is there any changes
-            const mapItem = MapItems[i];
+            mapItem = MapItems[i];
 
             if (!Helper.IsJSONEmpty(mapItem.navpropname)) {
                 changes = TrackChanges(mapItem.uicomponent);
@@ -159,6 +159,22 @@ const Component = (props) => {
 
             row['product'].find((x) => x.key === 'OtherImages').value = prodImages;
             UpdateBackUp('product');
+        }
+
+        // Update root entity
+        mapItem = MapItems.find(x => x.uicomponent === 'product');
+        changes = TrackChanges(mapItem.uicomponent);
+        if (changes.length > 0) {
+            let tmp = changes.filter((x) => mapItem.exclude.indexOf(x) === -1);
+            if (tmp.length > 0) {
+                let newObject = row[mapItem.uicomponent];
+                numfields = Helper.GetAllNumberFields(newObject);
+                if (numfields.length > 0) Helper.UpdateNumberFields(newObject, numfields);
+                rslt = await mapItem.func(newObject, dropDownOptions, mapItem.exclude);
+                if (!rslt.status) {
+                    return;
+                }
+            }
         }
 
         global.AlertPopup("success", "Product is updated successfully!");
