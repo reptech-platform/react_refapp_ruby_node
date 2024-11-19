@@ -42,6 +42,7 @@ const Component = (props) => {
                 {action === 'add' && <Button variant="contained" startIcon={<DoneIcon />} onClick={(e) => handleStateChange(e, true)}>Add</Button>}
                 {action === 'edit' && <Button variant="contained" startIcon={<DoneIcon />} onClick={(e) => handleStateChange(e, true)}>Update</Button>}
                 {action === 'delete' && <Button variant="contained" startIcon={<DoneIcon />} onClick={(e) => handleStateChange(e, true)}>Ok</Button>}
+                {action === 'apply' && <Button variant="contained" startIcon={<DoneIcon />} onClick={(e) => handleStateChange(e, true)}>Apply</Button>}
                 <Button variant="outlined" startIcon={<CloseIcon />} onClick={(e) => handleStateChange(e, false)}>
                     Cancel
                 </Button>

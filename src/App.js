@@ -3,7 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Box, CssBaseline } from '@mui/material';
 import { Header, Container, Drawer, AlertMessage } from 'components';
 import RouteItems from "./Routes";
-import { DarkTheme, LightTheme } from "./theme";
+import { DarkTheme, LightTheme, RedTheme, BlueTheme, DefaultTheme } from "./theme";
 import TimerSession from "shared/useTimerSession";
 
 import "./App.css";
@@ -21,7 +21,7 @@ global.AlertPopup = (type, msg) => {
 
 const Component = () => {
   const [open, setOpen] = React.useState(false);
-  const [customTheme, setCustomTheme] = React.useState(LightTheme);
+  const [customTheme, setCustomTheme] = React.useState(RedTheme);
   const [theme] = TimerSession('theme');
 
   const OnDrawerClicked = () => { setOpen(!open); }
@@ -31,6 +31,12 @@ const Component = () => {
       setCustomTheme(LightTheme);
     } else if (theme === 'Dark') {
       setCustomTheme(DarkTheme);
+    } else if (theme === 'Red') {
+      setCustomTheme(RedTheme);
+    } else if (theme === 'Blue') {
+      setCustomTheme(BlueTheme);
+    } else if (theme === 'Default') {
+      setCustomTheme(DefaultTheme);
     }
     sessionStorage.setItem('jwtToken', defaultToken);
   }, [theme]);
