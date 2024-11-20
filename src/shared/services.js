@@ -255,7 +255,7 @@ const GetProducts = async (query, expands) => {
     return new Promise(async (resolve) => {
         let url = `${serverApi}Products`;
         if (query) url = `${serverApi}Products?${query}`;
-        if (expands) url = `${url}&$expand=${expands}`;
+        if (!Helper.IsNullValue(expands)) url = `${url}&$expand=${expands}`;
 
         try {
             const res = await fetch(url, {
@@ -315,7 +315,7 @@ const GetProduct = async (id, params, expands) => {
         if (params) {
             url = `${serverApi}Products(${id})?${params}`;
         }
-        if (expands) url = params ? `${url}&$expand=${expands}` : `${url}?&$expand=${expands}`;
+        if (!Helper.IsNullValue(expands)) url = params ? `${url}&$expand=${expands}` : `${url}?&$expand=${expands}`;
 
         try {
             const res = await fetch(url, {
