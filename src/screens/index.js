@@ -17,6 +17,7 @@ import ProductOneToManyView from "./product_one2many/product_many_view.js";
 import Dashboard from "./dashboard";
 
 import Persons from "./person_table/person_index.js";
+import Trips from "./trip_table/trip_index.js";
 
 export {
     Products, ProductCreate, ProductTiles, ProductList,
@@ -24,5 +25,5 @@ export {
     InformatForm, StepperForm, TabbedLayout,
     ProductOneToMany, ProductOneToManyCreate, ProductOneToManyEdit, ProductOneToManyView,
     Dashboard,
-    Persons
+    Persons, Trips
 };

@@ -7,7 +7,7 @@ import {
     ProductOneToMany, ProductOneToManyCreate, ProductOneToManyEdit, ProductOneToManyView
 } from "screens";
 
-import { Persons } from "screens";
+import { Persons, Trips } from "screens";
 
 const Component = (props) => {
 
@@ -30,6 +30,7 @@ const Component = (props) => {
             {/* <Route path="/" element={<Products {...props} title={'Products Table'} nolistbar={true} />} /> */}
 
             <Route path="/persons" element={<Persons {...props} title={'Persons Table'} />} />
+            <Route path="/trips" element={<Trips {...props} title={'Trips Table'} />} />
 
             <Route exact path="/" element={<Dashboard {...props} title={'Dashboard'} />} />
         </Routes>
