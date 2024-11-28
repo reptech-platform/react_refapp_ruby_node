@@ -16,10 +16,13 @@ import ProductOneToManyView from "./product_one2many/product_many_view.js";
 
 import Dashboard from "./dashboard";
 
+import Persons from "./person_table/person_index.js";
+
 export {
     Products, ProductCreate, ProductTiles, ProductList,
     ProductEdit, ProductView, ProductTypes,
     InformatForm, StepperForm, TabbedLayout,
     ProductOneToMany, ProductOneToManyCreate, ProductOneToManyEdit, ProductOneToManyView,
-    Dashboard
+    Dashboard,
+    Persons
 };

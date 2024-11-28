@@ -21,7 +21,7 @@ global.AlertPopup = (type, msg) => {
 
 const Component = () => {
   const [open, setOpen] = React.useState(false);
-  const [customTheme, setCustomTheme] = React.useState(RedTheme);
+  const [customTheme, setCustomTheme] = React.useState(LightTheme);
   const [theme] = TimerSession('theme');
 
   const OnDrawerClicked = () => { setOpen(!open); }

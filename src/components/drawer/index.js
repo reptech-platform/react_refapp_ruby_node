@@ -3,6 +3,8 @@ import { Toolbar, List, ListItem, ListItemButton, ListItemIcon, ListItemText, To
 import MuiDrawer from '@mui/material/Drawer';
 import { styled, useTheme } from '@mui/material/styles';
 import { ShoppingBasket, Toc, EditNote, Checklist, Tab, GridView as GridViewIcon, Share as ShareIcon } from '@mui/icons-material';
+import { Person as PersonIcon } from '@mui/icons-material';
+
 import { DRAWER_WIDTH } from "config";
 import { useNavigate } from 'react-router-dom';
 
@@ -72,7 +74,15 @@ const Component = (props) => {
                             </ListItemIcon>
                             {open && <ListItemText primary="Products" sx={{ pl: 1 }} />}
                         </ListItemButton>
-                        <ListItemButton onClick={() => NavigateTo("/productsmany")} sx={{ height: 50 }}>
+                        <ListItemButton onClick={() => NavigateTo("/persons")} sx={{ height: 50 }}>
+                            <ListItemIcon sx={{ minWidth: 30 }}>
+                                <Tooltip title="Persons">
+                                    <PersonIcon color="primary" />
+                                </Tooltip>
+                            </ListItemIcon>
+                            {open && <ListItemText primary="Persons" sx={{ pl: 1 }} />}
+                        </ListItemButton>
+                        {/* <ListItemButton onClick={() => NavigateTo("/productsmany")} sx={{ height: 50 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                                 <Tooltip title="Products One to Many">
                                     <ShareIcon color="primary" />
@@ -127,7 +137,7 @@ const Component = (props) => {
                                 </Tooltip>
                             </ListItemIcon>
                             {open && <ListItemText primary="List Layout" sx={{ pl: 1 }} />}
-                        </ListItemButton>
+                        </ListItemButton> */}
                     </List>
                 </ListItem>
             </List>

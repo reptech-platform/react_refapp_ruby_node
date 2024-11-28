@@ -7,6 +7,8 @@ import {
     ProductOneToMany, ProductOneToManyCreate, ProductOneToManyEdit, ProductOneToManyView
 } from "screens";
 
+import { Persons } from "screens";
+
 const Component = (props) => {
 
     return (
@@ -26,6 +28,9 @@ const Component = (props) => {
             <Route path="/productsmany/view/:id" element={<ProductOneToManyView {...props} title={'View Products One To Many'} />} />
             <Route path="/productsmany/edit/:id" element={<ProductOneToManyEdit {...props} title={'Edit Products One To Many'} />} />
             {/* <Route path="/" element={<Products {...props} title={'Products Table'} nolistbar={true} />} /> */}
+
+            <Route path="/persons" element={<Persons {...props} title={'Persons Table'} />} />
+
             <Route exact path="/" element={<Dashboard {...props} title={'Dashboard'} />} />
         </Routes>
     )
