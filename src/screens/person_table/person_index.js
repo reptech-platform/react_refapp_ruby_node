@@ -11,9 +11,9 @@ import { Add as AddBoxIcon } from '@mui/icons-material';
 
 const columns = [
     { headerName: "User Name", field: "userName", sortField: "userName", flex: 1 },
-    { headerName: "First Name", field: "firstName", sortField: "firstName", flex: 1 },
-    { headerName: "Middle Name", field: "middleName", sortField: "middleName", flex: 1 },
-    { headerName: "Last Name", field: "lastName", sortField: "lastName", flex: 1 },
+    { headerName: "First Name", field: "firstName", sortField: "firstName", flex: 1, searchable: true },
+    { headerName: "Middle Name", field: "middleName", sortField: "middleName", flex: 1, searchable: true },
+    { headerName: "Last Name", field: "lastName", sortField: "lastName", flex: 1, searchable: true },
     { headerName: "Date Of Birth", field: "dateOfBirth", sortField: "dateOfBirth", flex: 1 },
     { headerName: "Gender", field: "gender", sortField: "gender", flex: 1 },
     { headerName: "Age", field: "age", sortField: "age", flex: 1 }
@@ -44,8 +44,8 @@ const Component = (props) => {
 
         if (!Helper.IsNullValue(searchStr)) {
             let _filter = [];
-            ['firstName', 'middleName', 'lastName'].forEach(x => {
-                _filter.push({ name: x, value: searchStr, condition: "like" });
+            columns.filter((z) => z.searchable).forEach(x => {
+                _filter.push({ name: x.field, value: searchStr, condition: "like" });
             });
 
             if (_filter.length > 0) {
@@ -160,7 +160,7 @@ const Component = (props) => {
                                     borderRadius: "4px",
                                     border: theme.borderBottom
                                 }}
-                                onClick={() => NavigateTo("/products/create")}
+                                onClick={() => NavigateTo("/persons/create")}
                             >
                                 <AddBoxIcon />
                             </IconButton>
@@ -168,7 +168,7 @@ const Component = (props) => {
                     </Stack>
                 </Box>
                 <Box style={{ width: '100%' }}>
-                    <DataTable keyId={'Product_id'} columns={columns} rowsCount={rowsCount} rows={rows} sortBy={sortBy} pageInfo={pageInfo} onActionClicked={OnActionClicked}
+                    <DataTable keyId={'userName'} columns={columns} rowsCount={rowsCount} rows={rows} sortBy={sortBy} pageInfo={pageInfo} onActionClicked={OnActionClicked}
                         onSortClicked={OnSortClicked} onPageClicked={OnPageClicked} />
                 </Box>
                 <CustomDialog open={showConfirm} action={'delete'} title={"Confirmation"} onCloseClicked={OnCloseClicked}>

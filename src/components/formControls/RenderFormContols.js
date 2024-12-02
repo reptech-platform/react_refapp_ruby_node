@@ -1,6 +1,9 @@
 import * as React from "react";
 import { TableContainer, Table, TableBody, TableCell, TableRow, Paper, Typography, IconButton } from '@mui/material';
-import { TextInput, ColorPicker, FileInput, CheckInput, DropDown, DateTimePicker, TimePicker } from "components";
+import {
+    TextInput, ColorPicker, FileInput, CheckInput, DropDown, DateTimePicker, TimePicker,
+    ArrayStringsInput, CheckGroupInput
+} from "components";
 import { Edit as EditIcon } from "@mui/icons-material";
 import Helper from "shared/helper";
 
@@ -132,8 +135,17 @@ const Component = (props) => {
                                             <TextInput mode={mode} id={x.key} name={x.key} value={x.value} validators={x.validators} editable={x.editable}
                                                 validationMessages={x.validationMessages} OnInputChange={OnInputChange} sx={{ width: x.width }} />
                                         )}
+                                        {x.type === 'array' && (
+                                            <ArrayStringsInput mode={mode} id={x.key} name={x.key} value={x.value} validators={x.validators} editable={x.editable}
+                                                validationMessages={x.validationMessages} OnInputChange={OnInputChange} sx={{ width: x.width }} />
+                                        )}
                                         {x.type === 'check' && (
                                             <CheckInput mode={mode} label={x.label} id={x.key} name={x.key} value={x.value || x.default} editable={x.editable}
+                                                validationMessages={x.validationMessages} OnInputChange={OnInputChange} sx={{ width: x.width }} />
+                                        )}
+
+                                        {x.type === 'checklist' && (
+                                            <CheckGroupInput mode={mode} label={x.label} id={x.key} name={x.key} value={x.value || x.default} editable={x.editable}
                                                 validationMessages={x.validationMessages} OnInputChange={OnInputChange} sx={{ width: x.width }} />
                                         )}
 
