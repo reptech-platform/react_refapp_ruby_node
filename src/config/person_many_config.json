@@ -1,0 +1,464 @@
+{
+    "person": [
+        {
+            "key": "userName",
+            "type": "keyid",
+            "UIComponentTitle": "Person"
+        },
+        {
+            "key": "userName",
+            "label": "User Name",
+            "type": "text",
+            "editable": true,
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "User name is required"
+            ],
+            "value": "Dummy Product"
+        },
+        {
+            "key": "firstName",
+            "label": "First Name",
+            "type": "text",
+            "editable": true,
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "First name is required"
+            ],
+            "value": "Dummy Product"
+        },
+        {
+            "key": "middleName",
+            "label": "Middle Name",
+            "type": "text",
+            "editable": true,
+            "validators": [],
+            "validationMessages": [
+                "Middle name is required"
+            ],
+            "value": "Dummy Product"
+        },
+        {
+            "key": "lastName",
+            "label": "Last Name",
+            "type": "text",
+            "editable": true,
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Last name is required"
+            ],
+            "value": "Dummy Product"
+        },
+        {
+            "key": "income",
+            "label": "Income",
+            "type": "text",
+            "editable": true,
+            "validators": [
+                "required",
+                "isFloat",
+                "isPositive"
+            ],
+            "validationMessages": [
+                "Income is required",
+                "Income should be number",
+                "Income should be positive number"
+            ],
+            "value": 10.25
+        },
+        {
+            "key": "age",
+            "label": "Age",
+            "type": "text",
+            "editable": true,
+            "validators": [
+                "required",
+                "isNumber",
+                "isPositive"
+            ],
+            "validationMessages": [
+                "Age is required",
+                "Age must be a number",
+                "Age must be a pasitive number"
+            ],
+            "value": 10
+        },
+        {
+            "key": "dateOfBirth",
+            "label": "Date Of Birth",
+            "type": "date",
+            "editable": true,
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Date of birth is required"
+            ]
+        },
+        {
+            "key": "gender",
+            "label": "Gender",
+            "type": "dropdown",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Gender is required"
+            ],
+            "value": "Dummy Product Description"
+        },
+        {
+            "key": "emails",
+            "label": "Emails",
+            "type": "array",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Emails is required"
+            ],
+            "value": "Dummy Product Description"
+        },
+        {
+            "key": "friendsList",
+            "label": "Friends",
+            "type": "dropdown",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Emails is required"
+            ],
+            "value": "Dummy Product Description"
+        },
+        {
+            "key": "bestFriendId",
+            "label": "Best Friend",
+            "type": "dropdown",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Emails is required"
+            ],
+            "value": "Dummy Product Description"
+        },
+        {
+            "key": "features",
+            "label": "Features",
+            "type": "checklist",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Emails is required"
+            ],
+            "value": "Dummy Product Description"
+        },
+        {
+            "key": "favoriteFeature",
+            "label": "Favorite Feature",
+            "type": "dropdown",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Emails is required"
+            ],
+            "value": "Dummy Product Description"
+        },
+        {
+            "key": "personAttachments",
+            "label": "Person Attachments",
+            "type": "doc",
+            "width": "30%",
+            "accept": ".JPG,.JPEG,.PNG,.PDF,.TXT,.DOC,.DOCX,.XLS,.XLSX",
+            "editable": true,
+            "multiple": true,
+            "validators": [],
+            "validationMessages": []
+        }
+    ],
+    "homeaddress": [
+        {
+            "key": "PtId",
+            "type": "keyid",
+            "UIComponentTitle": "Home Address"
+        },
+        {
+            "key": "address",
+            "label": "Address",
+            "type": "text",
+            "editable": true,
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Product type is required"
+            ],
+            "value": "Dummy Product Type"
+        },
+        {
+            "key": "name",
+            "label": "City",
+            "type": "text",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        },
+        {
+            "key": "region",
+            "label": "Region",
+            "type": "text",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        },
+        {
+            "key": "countryRegion",
+            "label": "Country Region",
+            "type": "text",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        }
+    ],
+    "addresslist": [
+        {
+            "key": "addressId",
+            "type": "keyid",
+            "child": true,
+            "UIComponentTitle": "Address List",
+            "parent": "person",
+            "property": "addressinfo",
+            "values": []
+        },
+        {
+            "key": "address",
+            "label": "Address",
+            "type": "text",
+            "editable": true,
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Product type is required"
+            ],
+            "value": "Dummy Product Type"
+        },
+        {
+            "key": "name",
+            "label": "City",
+            "type": "text",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        },
+        {
+            "key": "region",
+            "label": "Region",
+            "type": "text",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        },
+        {
+            "key": "countryRegion",
+            "label": "Country Region",
+            "type": "text",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        }
+    ],
+    "trip": [
+        {
+            "key": "tripId",
+            "type": "keyid",
+            "child": true,
+            "UIComponentTitle": "Trips",
+            "parent": "person",
+            "property": "trips",
+            "values": []
+        },
+        {
+            "key": "name",
+            "label": "Name",
+            "type": "text",
+            "editable": true,
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Product type is required"
+            ],
+            "value": "Dummy Product Type"
+        },
+        {
+            "key": "budget",
+            "label": "Budget",
+            "type": "text",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        },
+        {
+            "key": "description",
+            "label": "Description",
+            "type": "text",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        },
+        {
+            "key": "tags",
+            "label": "Tags",
+            "type": "array",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        },
+        {
+            "key": "startAt",
+            "label": "Start At",
+            "type": "date",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        },
+        {
+            "key": "endsAt",
+            "label": "Ends At",
+            "type": "date",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        },
+        {
+            "key": "startTime",
+            "label": "Start Time",
+            "type": "date",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        },
+        {
+            "key": "endTime",
+            "label": "End Time",
+            "type": "date",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        },
+        {
+            "key": "cost",
+            "label": "Cost",
+            "type": "text",
+            "editable": true,
+            "width": "30%",
+            "validators": [
+                "required"
+            ],
+            "validationMessages": [
+                "Description is required"
+            ],
+            "value": "Dummy Product Type Description"
+        }
+    ]
+}

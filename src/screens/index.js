@@ -17,9 +17,10 @@ import ProductOneToManyView from "./product_one2many/product_many_view.js";
 import Dashboard from "./dashboard";
 
 import Persons from "./person_table/person_index.js";
-import PersonCreate from "./person_details/person_createForm.js";
+import PersonOneToManyCreate from "./person_one2many/person_many_create.js";
 
 import Trips from "./trip_table/trip_index.js";
+import TripOneToManyCreate from "./trip_one2many/trip_many_create.js";
 
 export {
     Products, ProductCreate, ProductTiles, ProductList,
@@ -27,5 +28,5 @@ export {
     InformatForm, StepperForm, TabbedLayout,
     ProductOneToMany, ProductOneToManyCreate, ProductOneToManyEdit, ProductOneToManyView,
     Dashboard,
-    Persons, PersonCreate, Trips
+    Persons, PersonOneToManyCreate, Trips, TripOneToManyCreate
 };

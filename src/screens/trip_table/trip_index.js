@@ -161,7 +161,7 @@ const Component = (props) => {
                                     borderRadius: "4px",
                                     border: theme.borderBottom
                                 }}
-                                onClick={() => NavigateTo("/products/create")}
+                                onClick={() => NavigateTo("/trips/create")}
                             >
                                 <AddBoxIcon />
                             </IconButton>

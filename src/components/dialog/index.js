@@ -24,6 +24,7 @@ const Component = (props) => {
         <BootstrapDialog
             sx={{
                 "& .MuiDialog-paper": {
+                    maxWidth: "none",
                     width: width || 400,
                     height: height
                 }

@@ -66,14 +66,14 @@ const Component = (props) => {
             <List>
                 <ListItem disablePadding sx={{ display: 'block' }}>
                     <List component="div" disablePadding>
-                        <ListItemButton onClick={() => NavigateTo("/products")} sx={{ height: 50 }}>
+                        {/* <ListItemButton onClick={() => NavigateTo("/products")} sx={{ height: 50 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                                 <Tooltip title="Products">
                                     <ShoppingBasket color="primary" />
                                 </Tooltip>
                             </ListItemIcon>
                             {open && <ListItemText primary="Products" sx={{ pl: 1 }} />}
-                        </ListItemButton>
+                        </ListItemButton> */}
                         <ListItemButton onClick={() => NavigateTo("/persons")} sx={{ height: 50 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                                 <Tooltip title="Persons">
@@ -90,8 +90,15 @@ const Component = (props) => {
                             </ListItemIcon>
                             {open && <ListItemText primary="Trips" sx={{ pl: 1 }} />}
                         </ListItemButton>
-
-                        <ListItemButton onClick={() => NavigateTo("/productsmany")} sx={{ height: 50 }}>
+                        <ListItemButton onClick={() => NavigateTo("/producttiles")} sx={{ height: 50 }}>
+                            <ListItemIcon sx={{ minWidth: 30 }}>
+                                <Tooltip title="Tiles Layout">
+                                    <GridViewIcon color="primary" />
+                                </Tooltip>
+                            </ListItemIcon>
+                            {open && <ListItemText primary="Tiles Layout" sx={{ pl: 1 }} />}
+                        </ListItemButton>
+                        {/* <ListItemButton onClick={() => NavigateTo("/productsmany")} sx={{ height: 50 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                                 <Tooltip title="Products One to Many">
                                     <ShareIcon color="primary" />
@@ -99,7 +106,7 @@ const Component = (props) => {
                             </ListItemIcon>
                             {open && <ListItemText primary="Products-One2Many" sx={{ pl: 1 }} />}
                         </ListItemButton>
-                        {/* <ListItemButton onClick={() => NavigateTo("/producttypes")} sx={{ height: 50 }}>
+                        <ListItemButton onClick={() => NavigateTo("/producttypes")} sx={{ height: 50 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                                 <Tooltip title="Product Types">
                                     <Toc color="primary" />
